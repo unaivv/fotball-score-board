@@ -1,25 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import StartGame from "./components/StartGame"
+import ScoreBoard from "./components/ScoreBoard"
+
+import Context from "./context"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const initialValue = [
+		{
+			home: {
+				value: 0,
+				name: "Mexico",
+			},
+			away: {
+				value: 5,
+				name: "Canada",
+			},
+		},
+		{
+			home: {
+				value: 10,
+				name: "Spain",
+			},
+			away: {
+				value: 2,
+				name: "Brazil",
+			},
+		},
+		{
+			home: {
+				value: 2,
+				name: "Germany",
+			},
+			away: {
+				value: 2,
+				name: "France",
+			},
+		},
+		{
+			home: {
+				value: 6,
+				name: "Uruguay",
+			},
+			away: {
+				value: 6,
+				name: "Italy",
+			},
+		},
+		{
+			home: {
+				value: 3,
+				name: "Argentina",
+			},
+			away: {
+				value: 1,
+				name: "Australia",
+			},
+		},
+	]
+	return (
+		<div className="App">
+			<Context.Provider initialState={initialValue}>
+				<StartGame />
+				<ScoreBoard />
+			</Context.Provider>
+		</div>
+	)
 }
 
-export default App;
+export default App
