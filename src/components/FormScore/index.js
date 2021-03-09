@@ -17,11 +17,11 @@ export default function FormScore({onSubmit}) {
 		if (homeName.length > 0 && awayName.length > 0) {
 			const newScore = {
 				home: {
-					value: homeScore,
+					value: +homeScore,
 					name: homeName,
 				},
 				away: {
-					value: awayScore,
+					value: +awayScore,
 					name: awayName,
 				}
 			}
